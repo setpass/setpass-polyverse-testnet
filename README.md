@@ -1,11 +1,10 @@
-# PIT Phase 1 repo project: Cross-chain Proof of NFT
+# PIT Phase 2 repo project: Cross-chain Proof of NFT
 
-This repository is created to enter the PIT phase 1 challenge # 22.
+This repository is created to enter the PIT phase 2.
 
 ## Team Members
 
-- @tmsdkeys - Lead Developer
-- @dshiell - Developer
+- @dongqn
 
 ## Description
 
@@ -40,55 +39,30 @@ just install
 
 And add your private key to the .env file (rename it from .env.example).
 
-Then make sure that the config has the right contracts:
-```sh
-just set-contracts optimism XBallot && \
-just set-contracts base XProofOfVoteNFT
-```
-
-> Note: The order matters here! Make sure to have the exact configuration
-
-Check if the contracts compile:
-```sh
-just compile
-```
-### Deployment and creating channels (optional)
-
-Then you can deploy the contract if you want to have a custom version, but you can use the provided contract addresses that are prefilled in the config. If using the default, you can skip to the step to send packets.
-
-If you want to deploy your own, run:
-```sh
-just deploy optimism base false
-```
-and create a channel:
-```sh
-just create-channel
-```
-
 ### Sending a packet
 
 Now with an existing channel in the config (your own or the default), run:
 
 ```sh
-just send-packet optimism false
+just do-it
 ```
 You'll see an active waiting poll in the terminal and will be informed if the packet was sent successfully.
 
 ## Proof of testnet interaction
 
-After following the steps above you should have interacted with the testnet. You can check this at the [IBC Explorer](https://explorer.ethdenver.testnet.polymer.zone/).
+After following the steps above you should have interacted with the testnet. You can check this at the [IBC Explorer](https://sepolia.polymer.zone/packets).
 
 Here's the data of our application:
 
-- XBallot (OP Sepolia) : 0xB604C9F99Dc3Ebff9E12b71690141c7939fA0266
-- XProofOfVoteNFT (Base Sepolia): 0x33e23218a21bF730CFb07822CDCDfb2B11e962A5
-- Channel (OP Sepolia): channel-20
-- Channel (Base Sepolia): channel-21
+- XBallot (OP Sepolia) : 0xdeB99059bbe8C4Fabc76Da956Ac9e8B482dC7535
+- XProofOfVoteNFT (Base Sepolia): 0x5cd12fc20679c623966a7ca49eaa0ecf6bc2c258
+- Channel (OP Sepolia): channel-39230
+- Channel (Base Sepolia): channel-39231
 
 - Proof of Testnet interaction:
-    - [SendTx](https://optimism-sepolia.blockscout.com/tx/0x11431bcd6e7799ba4db96a6da4a61e5a0c98cd41c41e4fb6749c3b6191c21f10)
-    - [RecvTx](https://base-sepolia.blockscout.com/tx/0x73346e31af72d40a93076a7082d5dd099e2242b68e194912e227e269639067d2)
-    - [Ack](https://optimism-sepolia.blockscout.com/tx/0x53c021bbd48958ce84f5185c0287228e573f0fcfd755ee9e2c2d605b534ca834)
+    - [SendTx](https://optimism-sepolia.blockscout.com/tx/0x8f1e26688aafb3e09342cead7d901863f5ec4234a50c6aedac7cf1de4b6ffaff)
+    - [RecvTx](https://base-sepolia.blockscout.com/tx/0x18a8dbae03c92f2957e66f94d7b5b74d563978cac1df7c4b20fae8a025ee789c)
+    - [Ack](https://optimism-sepolia.blockscout.com/tx/0x651541d76a97f904226f124e452ee38ba6878436537e770de38b57cc8d1fc45d)
 
 ## Challenges Faced
 
